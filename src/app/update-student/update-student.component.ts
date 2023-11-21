@@ -1,3 +1,8 @@
+// Group Project Assignment 3
+// G01388668 Mrunmayee Bhagwat
+// G01411756 Priyesh Patil
+// G01368980 Srinath Silla
+// G01413450 Bhavya Sree Pannem 
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
@@ -8,12 +13,12 @@ import {ChangeDetectorRef } from '@angular/core';
 
 
 @Component({
-  selector: 'app-update-employee',
-  templateUrl: './update-employee.component.html',
-  styleUrls: ['./update-employee.component.css'],
+  selector: 'app-update-student',
+  templateUrl: './update-student.component.html',
+  styleUrls: ['./update-student.component.css'],
   changeDetection: ChangeDetectionStrategy.Default
 })
-export class UpdateEmployeeComponent implements OnInit {
+export class UpdateStudentComponent implements OnInit {
 
   id!: number;
   student: Student = new Student();
@@ -23,15 +28,6 @@ export class UpdateEmployeeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.student.sourceOfInterestOptions = {
-    //   friends: 'Friends',
-    //   relatives: 'Relatives',
-    //   internet: 'Internet',
-    //   television: 'Television',
-    //   // Add more options as needed
-    // };
-    
-    //this.student = new Student();
     console.log('Update Student Component Initialized');
     this.id = this.route.snapshot.params['id'];
     this.studentService.getStudentById(this.id).subscribe(data => {
