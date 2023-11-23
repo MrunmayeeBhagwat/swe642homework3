@@ -79,7 +79,44 @@ export class UpdateStudentComponent implements OnInit {
   }
 
   onSubmit() {
-    this.updateStudent();
+    let invalidFields = [];
+
+    if (!this.student.firstName || this.student.firstName === '') {
+      invalidFields.push('First Name');
+    }
+    if (!this.student.lastName || this.student.lastName === '') {
+      invalidFields.push('Last Name');
+    }
+    if (!this.student.streetAddress || this.student.streetAddress === '') {
+      invalidFields.push('Street Address Line 1');
+    }
+    if (!this.student.city || this.student.city === '') {
+      invalidFields.push('City');
+    }
+    if (!this.student.state || this.student.state === '') {
+      invalidFields.push('State');
+    }
+    if (!this.student.telephone || this.student.telephone === '') {
+      invalidFields.push('Telephone');
+    }
+    if (!this.student.date || this.student.date === '') {
+      invalidFields.push('Date of Survey');
+    }
+    if (!this.student.email || this.student.email === '') {
+      invalidFields.push('Email');
+    }
+    // Add more validation checks as needed...
+
+    if (invalidFields.length > 0) {
+      alert(
+        `The following fields are invalid: \n${invalidFields.join(
+          '\n '
+        )} \n Please enter valid values and press submit.`
+      );
+    } else {
+      this.updateStudent();
+    }
+    
   }
 
   public displaySubmissionAcknowledgement(firstName: String, lastName: String) {
