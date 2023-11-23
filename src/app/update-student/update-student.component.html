@@ -147,9 +147,7 @@ G01413450 Bhavya Sree Pannem  -->
     </div>
     <!-- Checkboxes allowing multiple selections-->
     <div class="mb-1">
-      <label class="form-label h5" for="liked_students"
-        >What did you like most about the campus?</label
-      >
+      <h5 class="form-label h5">What did you like most about the campus?</h5>
     </div>
 
     <div class="mb-3">
@@ -194,7 +192,7 @@ G01413450 Bhavya Sree Pannem  -->
           />
           <label
             class="form-check-label h6"
-            [for]="'hear_about_' + option.key"
+            [for]="option.key"
             >{{ option.value }}</label
           >
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -230,8 +228,29 @@ G01413450 Bhavya Sree Pannem  -->
     </div>
 
     <button type="submit" class="btn btn-primary mt-3 custom-button">
-      Submit
+      Save
     </button>
   </form>
+
+  <div class="modal fade" id="updateAcknowledgementModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Acknowledgement</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="ack-modal">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <!-- Embedded custom CSS for header box, h1 elements, buttons , container , required labels etc-->

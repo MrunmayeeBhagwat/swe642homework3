@@ -12,6 +12,10 @@ G01413450 Bhavya Sree Pannem */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
 }
 
+#dateError{
+  color: red;
+}
+
 h1 {
   color: #006633; /* GMU Green for headings */
   text-align: center;

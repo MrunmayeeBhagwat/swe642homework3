@@ -41,6 +41,7 @@ export class StudentListComponent implements OnInit {
   }
 
   public displayDeleteAcknowledgement(student: Student) {
+    console.log("Hi");
     this.delStudent = student;
     const container = document.getElementById('main-container');
     const button = document.createElement('button');

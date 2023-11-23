@@ -10,7 +10,7 @@ G01413450 Bhavya Sree Pannem -->
     <h1 class="text-center">CS Department Survey</h1>
   </div>
   <!-- Form that stores the data to the backend on clicking Submit -->
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" #createStudent=ngForm>
     <!-- Since there is no server side script associated, action is kept blank-->
     <div class="mb-1">
       <label for="firstname" class="form-label h5 required-label"
@@ -19,6 +19,7 @@ G01413450 Bhavya Sree Pannem -->
       <!-- autocomplete feature enabled along with required label-->
       <input
         type="text"
+        class="form-control"
         id="firstname"
         name="firstname"
         [(ngModel)]="student.firstName"
@@ -26,7 +27,11 @@ G01413450 Bhavya Sree Pannem -->
         class="form-control short-input"
         autocomplete="on"
         autofocus
+        #firstName="ngModel"
       /><br />
+      <!-- <div *ngIf="dateError" class="error-message" id="dateError">
+        firstName is required.
+      </div> -->
     </div>
     <div class="mb-1">
       <label for="lastname" class="form-label h5 required-label"
@@ -143,15 +148,14 @@ G01413450 Bhavya Sree Pannem -->
         [(ngModel)]="student.date"
         required
         class="form-control short-input"
-        placeholder="date"
+        placeholder
         autocomplete="on"
       /><br />
+      
     </div>
     <!-- Checkboxes allowing multiple selections-->
     <div class="mb-1">
-      <label class="form-label h5" for="liked_students"
-        >What did you like most about the campus?</label
-      >
+      <h5 class="form-label h5">What did you like most about the campus?</h5>
     </div>
 
     <div class="mb-3">
@@ -257,3 +261,7 @@ G01413450 Bhavya Sree Pannem -->
 
 
 </div>
+
+<script>
+  
+</script>

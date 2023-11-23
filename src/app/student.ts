@@ -1,14 +1,14 @@
 export class Student {
     id!: number;
-    firstName!: string;
-    lastName!: string;
-    streetAddress!: string;
-    email!: string;
-    city!: string;
-    state!: string;
-    zip!: string;
-    telephone!: string;
-    date!: string;
+    firstName: string = '';
+    lastName: string = '';
+    streetAddress: string = '';
+    email: string = '';
+    city: string = '';
+    state: string = '';
+    zip: string = '';
+    telephone: string = '';
+    date: string = '';
     likedOptions: { [key: string]: boolean } = {
         'Students': false,
         'Location': false,
@@ -17,7 +17,7 @@ export class Student {
         'Dorms': false,
         'Sports': false
     };
-    likelihoodToRecommend!: string;
+    likelihoodToRecommend: string = '';
     sourceOfInterest: string = 'Friends'; 
     selectedOption: string = 'Friends'; 
     
@@ -28,7 +28,7 @@ export class Student {
         television: 'Television',
         // Add more options as needed
     };
-    comments!: string;
+    comments: string = '';
 
 
 

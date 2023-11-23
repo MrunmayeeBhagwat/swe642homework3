@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { formatDate } from '@angular/common';
 import {ChangeDetectorRef } from '@angular/core';
 import { Modal } from 'bootstrap';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -53,14 +54,15 @@ export class UpdateStudentComponent implements OnInit {
 
   updateStudent() {
     this.studentService.updateStudent(this.id, this.student).subscribe(
-      (data) => {
+      {
+        next: (data: any) => {
         console.log('Updated student data:', data);
         this.student = data;
         this.displaySubmissionAcknowledgement(this.student.firstName,this.student.lastName);
         this.goToStudentList();
       },
-      (error) => console.log(error)
-    );
+      error: (error: HttpErrorResponse) => console.log(error)
+    });
   }
 
   onSelectedOptionChange(value: string): void {
