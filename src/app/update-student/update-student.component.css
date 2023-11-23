@@ -5,14 +5,38 @@ G01411756 Priyesh Patil
 G01368980 Srinath Silla
 G01413450 Bhavya Sree Pannem  */
 /* CSS Styles sheet for the Update student page */
-.header-box {
-    border: 5px solid #006633;
-    padding: 20px;
-    box-shadow: 5px 5px 10px #888888;
-    background-color: #ffcc33;
-    color: #006633;
-    border-radius: 10px;
-  }
+/* Style for the heading box at the top */
+.green-heading-box {
+  background-color: white;
+  border: 5px solid #006633;
+  padding: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); 
+}
+
+h1 {
+  color: #006633; /* GMU Green for headings */
+  text-align: center;
+  margin-left: 30%;
+  
+}
+
+.inline-container {
+  display: flex;
+  align-items: center;
+}
+
+.inline-container img {
+  height: 45px; 
+  width: auto; 
+  margin-right: 160px; 
+  margin-bottom: 5px;
+}
+
+.inline-container h1 {
+  text-align: right;
+  margin-bottom: -5px;
+}   
+
 
   .custom-button {
     margin: 20px;
@@ -22,10 +46,7 @@ G01413450 Bhavya Sree Pannem  */
     width: 100%;
   }
 
-  h1 {
-    color: #006633;
-  }
-  
+ 
   body {
     margin: 0;
     padding: 0;
@@ -46,6 +67,14 @@ G01413450 Bhavya Sree Pannem  */
     z-index: 1;
   }
 
+  h3 {
+    text-align: center;
+    margin-top: 10px; 
+    margin-bottom: -20px;/* Adjust as needed */
+    font-weight: bold;
+    color: black;
+  }
+  
   .container {
     position: relative;
     z-index: 2;
@@ -63,4 +92,3 @@ G01413450 Bhavya Sree Pannem  */
   .custom-table {
     border: 2px solid black;
   }
-  

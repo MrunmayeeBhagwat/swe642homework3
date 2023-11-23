@@ -40,6 +40,8 @@ export class CreateStudentComponent implements OnInit {
       television: 'Television',
       // Add more options as needed
     };
+
+    this.student.sourceOfInterest = 'friends';
   }
 
   // Subscribing the data on the survey page and displaying them in Student List Page

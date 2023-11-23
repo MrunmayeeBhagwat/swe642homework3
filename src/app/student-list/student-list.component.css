@@ -4,15 +4,6 @@ G01411756 Priyesh Patil
 G01368980 Srinath Silla
 G01413450 Bhavya Sree Pannem  */
 /* CSS Styles for displaying the list of Students*/
-h3 {
-    text-align: center;
-    margin-top: 10px; /* Adjust as needed */
-    font-weight: bold;
-    color: black;
-    margin-bottom: 20px;
-  }
-
-/* Styling for the table */
 /* styles.css */
 
 h3 {
@@ -28,7 +19,7 @@ h3 {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
-    background-color: #f8f9fa;
+    background-color: #006633;
     border: 1px solid #dee2e6;
     border-radius: 0.25rem;
     box-shadow: 0 0 100px rgba(113, 15, 15, 0.1); /* Add box shadow for a subtle lift */
@@ -38,7 +29,7 @@ h3 {
 .table thead th {
     background-color: #006633;
     color: #fff;
-    border-color: #004d00;
+    border-color: #dee2e6;
 }
 
 /* Styling for alternating rows */
@@ -60,18 +51,14 @@ h3 {
     border-color: #dee2e6;
 }
 
-/* Optional: Adjust styles for smaller screens */
-@media (max-width: 767px) {
-    .table {
-        font-size: 14px;
-    }
-}
+
 
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+/* styles.css */
 
 .button-wrapper {
     display: block;
@@ -81,8 +68,7 @@ body {
 
 .container {
     overflow: auto; /* Enable both horizontal and vertical scrolling */
-    max-width: 100%; /* Make the container responsive */
-    padding: 15px;
+    width: 100%; /* Make the container responsive */
     white-space: nowrap; /* Prevent text wrapping in table cells */
 }
 
@@ -93,7 +79,7 @@ body {
 }
 
 .table::-webkit-scrollbar-thumb {
-    background-color: #888;
+    background-color: #ffffff;
 }
 
 /* Optional: Adjust styles for smaller screens */
@@ -102,7 +88,5 @@ body {
         font-size: 14px; /* Adjust font size for smaller screens if needed */
     }
 }
-
-
 
 

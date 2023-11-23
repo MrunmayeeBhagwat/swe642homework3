@@ -4,23 +4,23 @@ G01411756 Priyesh Patil
 G01368980 Srinath Silla
 G01413450 Bhavya Sree Pannem  */
 /* Style the navbar */
+/* Style the navbar */
 .navbar {
-    color: #008000; /* Green color for the background */
-    margin-top: 0px;
-  }
-  
-  /* Style the navbar links */
-  .navbar-nav .nav-item .nav-link {
-    color: #fff; /* White color for the text */
-  }
-  
-  /* Style the active link */
-  .navbar-nav .nav-item .nav-link.active {
-    font-weight: bold;
-    color: #fff; /* Black color for the active link */
-  }
-  
-  /* Hover effect on the links */
-  .navbar-nav .nav-item .nav-link:hover {
-    color: #fff; /* Black color for the hover effect */
-  }
+  background-color: #008000; /* Green color for the background */
+}
+
+/* Style the navbar links */
+.navbar-nav .nav-item .nav-link {
+  color: #fff; /* White color for the text */
+}
+
+/* Style the active link */
+.navbar-nav .nav-item .nav-link.active {
+  font-weight: bold;
+  color: #fff; /* Black color for the active link */
+}
+
+/* Hover effect on the links */
+.navbar-nav .nav-item .nav-link:hover {
+  color: #fff; /* Black color for the hover effect */
+}
