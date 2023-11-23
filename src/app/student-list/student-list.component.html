@@ -4,87 +4,94 @@ G01411756 Priyesh Patil
 G01368980 Srinath Silla
 G01413450 Bhavya Sree Pannem  -->
 <!-- HTML Template file for displaying the list of students and their details in a table -->
-<h3 class="text-center">STUDENT'S LIST</h3>
-<div class="container table-container">
-<table class="table table-striped table-dark table-bordered">
-   <thead>
-    <tr>
-        <th>
-            First Name
-        </th>
-        <th>
-            Last  Name
-        </th>
-        <th>
-            Email 
-        </th>
-        <th>
-            Street Address
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            State
-        </th>
-        <th>
-            Zipcode
-        </th>
-        <th>
-            Telephone
-        </th>
-        <th>
-            Date
-        </th>
-        <th>
-            LikedOptions
-        </th>
-        <th>
-            LikelihoodToRecommend
-        </th>
-        <th>
-            SourceOfInterest
-        </th>
-        <th>
-            Comments
-        </th>
-        <th>
-          Actions
-      </th>
-    </tr>
-   </thead>
-   <tbody>
-    <tr *ngFor="let student of students">
-        <td>{{student.firstName}}</td>
-        <td>{{student.lastName}}</td>
-        <td>{{student.email}}</td>
-        <td>{{student.streetAddress}}</td>
-        <td>{{student.city}}</td>
-        <td>{{student.zip}}</td>
-        <td>{{student.state}}</td>
-        <td>{{student.telephone}}</td>
-        <td>{{student.date}}</td>
+<h2 class="text-center">STUDENTS LIST</h2>
+<div class="container" id="main-container">
+  <table class="table table-striped table-dark table-bordered">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Street Adress</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        <th>telephone</th>
+        <th>Date</th>
+        <th>likedOptions</th>
+        <th>likelihoodToRecommend</th>
+        <th>sourceOfInterest</th>
+        <th>comments</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.firstName }}</td>
+        <td>{{ student.lastName }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.streetAddress }}</td>
+        <td>{{ student.city }}</td>
+        <td>{{ student.zip }}</td>
+        <td>{{ student.state }}</td>
+        <td>{{ student.telephone }}</td>
+        <td>{{ student.date }}</td>
         <td>
-            <div *ngFor="let option of student.likedOptions | keyvalue">
-                <ng-container *ngIf="option.value">
-                    {{ option.key }}: Yes
-                    <br />
-                </ng-container>
-            </div>
+          <div *ngFor="let option of student.likedOptions | keyvalue">
+            <ng-container *ngIf="option.value">
+              {{ option.key }}: Yes
+              <br />
+            </ng-container>
+          </div>
         </td>
-        <td>{{student.likelihoodToRecommend}}</td>
-        <td>{{student.sourceOfInterest}}</td>
-        <td>{{student.comments}}</td>    
+        <td>{{ student.likelihoodToRecommend }}</td>
+        <td>{{ student.sourceOfInterest }}</td>
+        <td>{{ student.comments }}</td>
         <td colspan="2">
-            <div class="button-wrapper">
-                <button (click)="updateStudent(student.id)" class="btn btn-info btn-lg">Update</button>
-            </div>
-            <div class="button-wrapper">
-                <button (click)="deleteStudent(student.id)" class="btn btn-danger btn-lg" style="margin-top: 10px">Delete</button>
-            </div>
+          <div class="button-wrapper">
+            <!-- Update button to allow changes to the data of individual entry -->
+            <button
+              (click)="updateStudent(student.id)"
+              class="btn btn-info btn-lg"
+            >
+              Update
+            </button>
+          </div>
+          <div class="button-wrapper">
+            <!-- Button to delete an entry in the table -->
+            <button
+              (click)="displayDeleteAcknowledgement(student)"
+              class="btn btn-danger btn-lg"
+              style="margin-top: 10px"
+            >
+              Delete
+            </button>
+          </div>
         </td>
-        
-    </tr>
-   </tbody>
-</table>
+      </tr>
+    </tbody>
+  </table>
+
+<div class="modal fade" id="deleteStudentSurveyModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fs-5" id="exampleModalLabel">Delete Survey</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="ack-modal">
+                Are you sure you want to delete {{delStudent.firstName}} {{delStudent.lastName}}?
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="delete-survey-form" class="btn btn-secondary"
+                    data-bs-dismiss="modal">No</button>
+                <button (click)="delStudent && deleteStudent(delStudent.id)" type="button"
+                    class="btn btn-danger">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </div>
